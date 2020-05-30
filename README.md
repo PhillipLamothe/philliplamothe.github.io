@@ -1,1 +1,1 @@
-# http://philliplamothe.github.io
+# http://philliplamothe.github.io/SEG3125-Lab1
