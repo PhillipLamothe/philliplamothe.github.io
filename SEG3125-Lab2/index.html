@@ -1,0 +1,57 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>GroceryShop</title>
+    <link href="styles/stylesheet.css" rel="stylesheet" type="text/css">
+</head>
+<body class="body">
+<h1 class="pagetitle">Selectedibles</h1>
+<div class="tab">
+    <button class="tablinks" onclick="openInfo(event, 'Client')">Client</button>
+    <button class="tablinks" onclick="openInfo(event, 'Products');populateListProductChoices(null, 'displayProduct')">Products</button>
+    <button class="tablinks" onclick="openInfo(event, 'Cart')">Cart</button>
+</div>
+
+<div id="Client" class="tabcontent">
+    <h3 class="tabtitle">Client Information</h3>
+    <p class="tabtext">Please select any dietary restrictions.</p>
+    <div class="listtext">
+        <label>
+            <input type="checkbox" id="vegetarian" value="vegetarian"
+                   onclick="populateListProductChoices(this.id, 'displayProduct')">          Vegetarian<br>
+            <input type="checkbox" id="glutenFree" value="glutenFree"
+                   onclick="populateListProductChoices(this.id, 'displayProduct')">          Gluten-Free<br>
+            <input type="checkbox" id="lactoseFree" value="lactoseFree"
+                   onclick="populateListProductChoices(this.id, 'displayProduct')">          Lactose-Free<br>
+            <input type="checkbox" id="nutFree" value="nutFree"
+                   onclick="populateListProductChoices(this.id, 'displayProduct')">          Nut-Free<br>
+            <input type="checkbox" id="organic" value="organic"
+                   onclick="populateListProductChoices(this.id, 'displayProduct')">          Organic Only<br>
+        </label>
+    </div>
+</div>
+
+<div id="Products" class="tabcontent">
+    <h3 class="tabtitle">Your targeted products</h3>
+    <p class="tabtext">We preselected products based on your restrictions.<br>Choose items to buy: <br></p>
+        <div id="displayProduct"></div>
+        <button id="addCart" type="button" onclick="selectedItems()" class="cartbutton">
+            Add selected items to cart.
+        </button>
+</div>
+
+<div id="Cart" class="tabcontent">
+    <h3 class="tabtitle">Cart</h3>
+    <p class="tabtext">Here is your cart:</p>
+    <div id="displayCart"></div>
+</div>
+
+<script src="scripts/groceries.js" type="text/javascript"></script>
+<script src="scripts/main.js" type="text/javascript"></script>
+
+</body>
+<footer>
+    <p class="footer"><i>Website designed by Phillip Lamothe, 8606706</i></p>
+</footer>
+</html>

@@ -1,0 +1,102 @@
+* {
+    font-family: calibri, serif;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.pagetitle {
+    font-family: "Brush Script MT" ;
+    text-align: center;
+    color: forestgreen;
+    background-color: palegreen;
+    font-size: 50pt;
+    padding-top: 15px;
+    padding-bottom: 10px;
+    border: 1px solid forestgreen;
+}
+
+.tab {
+    overflow: hidden;
+    border: 1px solid forestgreen;
+    background-color: #232923;
+    display: block;
+    border-top: none;
+    border-bottom: none;
+    margin: 0 5%;
+}
+
+.tab button {
+    background-color: inherit;
+    color: white;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 12px 14%;
+    transition: 0.3s;
+    text-align: center;
+    font-size: 18pt;
+}
+
+.tab button:hover {
+    background-color: #ddd;
+}
+
+.tab button.active {
+    background-color: #eee;
+}
+
+.tabcontent {
+    display: none;
+    padding: 6px 12px;
+    margin-left: 35%;
+    border-top: none;
+}
+
+.tabtitle {
+    margin: 10px 0
+
+}
+
+.tabtext {
+    margin-bottom: 8px;
+
+}
+
+.listtext {
+    text-transform: capitalize;
+    padding-left: 6px;
+}
+
+.carttext {
+    text-transform: capitalize;
+}
+
+.cartbutton {
+    padding: 4px 10px;
+    margin: 10px 18px;
+    font-size: 12pt;
+}
+
+.priceline {
+    padding-top: 8px;
+}
+
+.body {
+    background-color: #eaf2aa;
+
+}
+
+.footer {
+    text-align: center;
+    color: forestgreen;
+    background-color: palegreen;
+    font-size: 12pt;
+    padding-top: 6px;
+    padding-bottom: 8px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    border-top: 1px solid forestgreen ;
+}
