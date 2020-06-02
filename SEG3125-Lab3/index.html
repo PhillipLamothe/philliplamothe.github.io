@@ -8,43 +8,85 @@
 <body class="body">
 <h1 class="pagetitle">Selectedibles</h1>
 <div class="tab">
-    <button class="tablinks" onclick="openInfo(event, 'Client')">Client</button>
-    <button class="tablinks" onclick="openInfo(event, 'Products');populateListProductChoices(null, 'displayProduct')">Products</button>
-    <button class="tablinks" onclick="openInfo(event, 'Cart')">Cart</button>
+    <button id="clientbutton" class="tablinks active"
+            onclick="openInfo(event, 'Client')">Preferences</button>
+    <button id="productsbutton" class="tablinks" disabled
+            onclick="openInfo(event, 'Products');populateListProductChoices(null, 'displayProduct')">Products</button>
+    <button id="cartbutton" class="tablinks" disabled
+            onclick="openInfo(event, 'Cart')">Cart</button>
 </div>
 
-<div id="Client" class="tabcontent">
-    <h3 class="tabtitle">Client Information</h3>
-    <p class="tabtext">Please select any dietary restrictions.</p>
+<div id="Client" class="tabcontent" style="display: block">
+    <h3 class="tabtitle">Step 1: Help Us, Help You!</h3>
+    <p class="tabtext">We want to help you by showing only the food you're interested in.</p>
+    <p class="tabtext">Please select any dietary preferences:</p>
     <div class="listtext">
-        <label>
-            <input type="checkbox" id="vegetarian" value="vegetarian"
-                   onclick="populateListProductChoices(this.id, 'displayProduct')">          Vegetarian<br>
-            <input type="checkbox" id="glutenFree" value="glutenFree"
-                   onclick="populateListProductChoices(this.id, 'displayProduct')">          Gluten-Free<br>
-            <input type="checkbox" id="lactoseFree" value="lactoseFree"
-                   onclick="populateListProductChoices(this.id, 'displayProduct')">          Lactose-Free<br>
-            <input type="checkbox" id="nutFree" value="nutFree"
-                   onclick="populateListProductChoices(this.id, 'displayProduct')">          Nut-Free<br>
-            <input type="checkbox" id="organic" value="organic"
-                   onclick="populateListProductChoices(this.id, 'displayProduct')">          Organic Only<br>
+        <label class="preflabel">Vegetarian
+            <input type="radio" class="radiobutton" name="vegetarian" id="vegetarian_T" style="margin-left: 50pt"
+                   onclick="populateListProductChoices(this.id, 'displayProduct')">Yes
+            <input type="radio" class="radiobutton" name="vegetarian" id="vegetarian_F" checked
+                   onclick="populateListProductChoices(this.id, 'displayProduct')">No
+            <br>
+        </label>
+        <label class="preflabel">Gluten-Free
+            <input type="radio" class="radiobutton" name="glutenFree" id="glutenFree_T" style="margin-left: 44pt"
+                   onclick="populateListProductChoices(this.id, 'displayProduct')">Yes
+            <input type="radio" class="radiobutton" name="glutenFree" id="glutenFree_F" checked
+                   onclick="populateListProductChoices(this.id, 'displayProduct')">No
+            <br>
+        </label>
+        <label class="preflabel">Lactose-Free
+            <input type="radio" class="radiobutton" name="lactoseFree" id="lactoseFree_T" style="margin-left: 40pt"
+                   onclick="populateListProductChoices(this.id, 'displayProduct')">Yes
+            <input type="radio" class="radiobutton" name="lactoseFree" id="lactoseFree_F" checked
+                   onclick="populateListProductChoices(this.id, 'displayProduct')">No
+            <br>
+        </label>
+        <label class="preflabel">Nut-Free
+            <input type="radio" class="radiobutton" name="nutFree" id="nutFree_T" style="margin-left: 61pt"
+                   onclick="populateListProductChoices(this.id, 'displayProduct')">Yes
+            <input type="radio" class="radiobutton" name="nutFree" id="nutFree_F" checked
+                   onclick="populateListProductChoices(this.id, 'displayProduct')">No
+            <br>
+        </label>
+        <label class="preflabel">Organic
+            <input type="radio" class="radiobutton" name="organic" id="organic_T" style="margin-left: 67pt"
+                   onclick="populateListProductChoices(this.id, 'displayProduct')">Yes
+            <input type="radio" class="radiobutton" name="organic" id="organic_F" checked
+                   onclick="populateListProductChoices(this.id, 'displayProduct')">No
+            <br>
         </label>
     </div>
+    <button class="clientnext" onclick="openInfo(event, 'Products');populateListProductChoices(null, 'displayProduct')">Next</button>
 </div>
 
 <div id="Products" class="tabcontent">
-    <h3 class="tabtitle">Your targeted products</h3>
-    <p class="tabtext">We preselected products based on your restrictions.<br>Choose items to buy: <br></p>
-        <div id="displayProduct"></div>
-        <button id="addCart" type="button" onclick="selectedItems()" class="cartbutton">
-            Add selected items to cart.
+    <h3 class="tabtitle">Step 2: Add Items to Your Cart</h3>
+    <p class="tabtext">We preselected products based on your preferences.</p>
+    <label style="margin: -5px 0 10px 0">
+        Filter By:
+        <select name="filter" onclick="filterRefresh(this.value)">
+            <option value="---" >---No Filter---</option>
+            <option value="readytoeat">Ready To Eat</option>
+            <option value="frozen">Frozen</option>
+            <option value="refrigerated">Refrigerated</option>
+            <option value="nonperishable">Non-Perishable</option>
+        </select>
+    </label>
+    <p style="margin: 10px 0 -10px 0">Select items to be added to your cart: </p><br>
+        <div id="displayProduct" class="displayproduct"></div>
+        <button id="addCart" type="button" onclick="selectedItems();openInfo(event, 'Cart')" class="cartbutton">
+            Add selected items to your cart.
         </button>
 </div>
 
 <div id="Cart" class="tabcontent">
-    <h3 class="tabtitle">Cart</h3>
-    <p class="tabtext">Here is your cart:</p>
+    <h3 class="tabtitle">Step 3: Review and Checkout</h3>
+    <p class="tabtext">Here are the contents of your cart:</p>
     <div id="displayCart"></div>
+    <label>
+        <button id="checkoutbutton" class="checkout">Checkout</button>
+    </label>
 </div>
 
 <script src="scripts/groceries.js" type="text/javascript"></script>

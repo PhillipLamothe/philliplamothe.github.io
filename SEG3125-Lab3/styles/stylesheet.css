@@ -33,7 +33,7 @@
     border: none;
     outline: none;
     cursor: pointer;
-    padding: 12px 14%;
+    padding: 12px 13.3%;
     transition: 0.3s;
     text-align: center;
     font-size: 18pt;
@@ -44,7 +44,12 @@
 }
 
 .tab button.active {
-    background-color: #eee;
+    background-color: white;
+    color: black;
+}
+
+.tab button:disabled {
+    background-color: slategray;
 }
 
 .tabcontent {
@@ -75,16 +80,42 @@
 
 .cartbutton {
     padding: 4px 10px;
-    margin: 10px 18px;
+    margin: 20px 25px;
     font-size: 12pt;
+}
+
+.checkout {
+    padding: 4px 10px;
+    margin: 20px 30px;
+    font-size: 12pt;
+}
+
+.radiobutton {
+    margin: 0 8px;
+}
+
+.clientnext {
+    padding: 3px 20px;
+    margin: 20px 10%;
+    font-size: 14pt;
+}
+
+.preflabel {
+    font-size: 13pt;
 }
 
 .priceline {
     padding-top: 8px;
 }
 
+html {
+    min-height: 100%;
+    position: relative;
+}
+
 .body {
     background-color: #eaf2aa;
+    margin-bottom: 30px;
 
 }
 
@@ -97,6 +128,24 @@
     padding-bottom: 8px;
     position: absolute;
     bottom: 0;
-    width: 100%;
+    left: 0;
+    right: 0;
     border-top: 1px solid forestgreen ;
+}
+
+.listimg {
+    border: 2px solid #dddddd;
+    border-radius: 2px;
+    padding: 2px;
+    margin: 10px 7px -5px 15px;
+    height: 50px;
+    width: 50px;
+}
+
+.listimg:hover {
+    box-shadow: 0 0 4px lightblue;
+}
+
+.displayproduct {
+    margin: 0;
 }

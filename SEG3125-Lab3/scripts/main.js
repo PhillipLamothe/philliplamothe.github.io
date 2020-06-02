@@ -1,4 +1,5 @@
-let  selectedRestrictions = [];
+let selectedRestrictions = [];
+let selectedFilter = "---";
 
 function openInfo(evt, tabName) {
     let tabcontent = document.getElementsByClassName("tabcontent")
@@ -8,23 +9,60 @@ function openInfo(evt, tabName) {
 
     let tablinks = document.getElementsByClassName("tablinks");
     for (let i = 0; i < tablinks.length; i++) {
-        tablinks[i].className = tablinks[i].className.replace("active", "");
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
     }
 
     document.getElementById((tabName)).style.display = "block";
-    evt.currentTarget.className += "active";
+
+    if (evt.currentTarget.className === "clientnext") {
+        for (let i = 0; i < tablinks.length; i++) {
+            if (tablinks[i].id === "productsbutton") {
+                tablinks[i].className += " active";
+                tablinks[i].disabled = false;
+            }
+        }
+    }
+    if (evt.currentTarget.className === "cartbutton") {
+        for (let i = 0; i < tablinks.length; i++) {
+            if (tablinks[i].id === "cartbutton") {
+                tablinks[i].className += " active";
+                tablinks[i].disabled = false;
+            }
+        }
+    }
+    if (evt.currentTarget.id === "clientbutton") {
+        for (let i = 0; i < tablinks.length; i++) {
+            if (tablinks[i].id === "clientbutton") {
+                tablinks[i].className += " active";
+            }
+            else {
+                tablinks[i].disabled = true;
+            }
+        }
+    }
+    if (evt.currentTarget.id === "productsbutton") {
+        for (let i = 0; i < tablinks.length; i++) {
+            if (tablinks[i].id === "productsbutton") {
+                tablinks[i].className += " active";
+            }
+            else if (tablinks[i].id ==="cartbutton") {
+                tablinks[i].disabled = true;
+            }
+        }
+    }
 }
 
 function populateListProductChoices(slct1, slct2) {
+
     if (slct1 !== null) {
-        let s1 = document.getElementById(slct1);
-        if (( !selectedRestrictions.includes(s1.value)) && (s1.checked)) {
-            selectedRestrictions.push(s1.value);
+        let s1 = slct1.split("_");
+        if ((!selectedRestrictions.includes(s1[0])) && (s1[1] === "T")) {
+            selectedRestrictions.push(s1[0]);
         }
-        else if ((selectedRestrictions.includes(s1.value)) && (!s1.checked)) {
-            let index = selectedRestrictions.indexOf(s1.value);
+        else if ((selectedRestrictions.includes(s1[0])) && (s1[1] === "F")) {
+            let index = selectedRestrictions.indexOf(s1[0]);
             if (index > -1) {
-                selectedRestrictions.splice(index, 1)
+                selectedRestrictions.splice(index, 1);
             }
         }
     }
@@ -37,6 +75,16 @@ function populateListProductChoices(slct1, slct2) {
 
     for (let i = 0; i < optionArray.length; i++) {
 
+        let prodMap = {
+            "price" : "",
+            "imageURL" : ""
+        };
+        for ( let j = 0; j < products.length; j += 1) {
+            if (products[j]["name"] === optionArray[i]) {
+                prodMap = products[j];
+            }
+        }
+
         let productName = optionArray[i];
         let checkbox = document.createElement("input");
         checkbox.type = "checkbox";
@@ -44,15 +92,21 @@ function populateListProductChoices(slct1, slct2) {
         checkbox.value = productName;
         s2.appendChild(checkbox);
 
+        let image = document.createElement("img");
+        let imageURL = prodMap["imageURL"];
+        image.className = "listimg"
+        image.src = imageURL;
+        image.alt = optionArray[i];
+
+        let imagelink = document.createElement("a");
+        imagelink.href = imageURL;
+        imagelink.appendChild(image);
+        s2.appendChild(imagelink);
+
         let label = document.createElement('label');
         label.htmlFor = productName;
         label.className = "listtext";
-        let prodPrice = 0
-        for ( let j = 0; j < products.length; j += 1) {
-            if (products[j]["name"] === optionArray[i]) {
-                prodPrice = products[j]["price"];
-            }
-        }
+        let prodPrice = prodMap["price"]
         let labeltext = document.createTextNode(productName + " ..... $" + prodPrice);
         label.appendChild(labeltext);
         s2.appendChild(label);
@@ -67,7 +121,7 @@ function selectedItems() {
     let chosenProducts = [];
 
     let c = document.getElementById("displayCart");
-    c.innnerHTML = "";
+    while (c.firstChild) c.removeChild(c.firstChild);
 
     let para = document.createElement("p");
     para.className = "carttext";
