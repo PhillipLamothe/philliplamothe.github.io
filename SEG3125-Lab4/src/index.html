@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SEG3125 Lab 4</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body marginwidth="0" style="width: 100%" class="body">
+    <div class="container-md mt-3 p-2 bg-dark text-white title-card">
+        <h1>
+            <img src="images/SnipSnipLogo.png" alt="Logo" width="40px" height="40px" class="logo">
+            Snip Snip!
+        </h1>
+        <p style="padding: 5pt 0 0 8pt">Salon-quality cuts at affordable prices.</p>
+    </div>
+    <div class="container-sm info-card">
+        <p style="white-space: pre">Tel: (613) 523- 8294                                                                                      Find Us At: 8294 Rocky Rd., Derry, ON Canada K1J 9D2<button type="button" class="btn-info maps-button">Open in Google Maps</button></p>
+    </div>
+    <div class="container-lg p-3 bg-dark text-white" style="text-align: center">
+        <div class="row">
+            <div class="col">
+                <h2 style="text-align: center">CUTS</h2>
+                <div class="hover-image">
+                    <p>Kid's Cut...................................$15</p>
+                    <figure>
+                        <img src="images/kids-haircut.jpg">
+                    </figure>
+                </div>
+                <div class="hover-image">
+                    <p>Basic Cut..................................$20</p>
+                    <figure>
+                        <img src="images/basic-cut.jpg">
+                    </figure>
+                </div>
+                <div class="hover-image">
+                    <p>Cut & Style..............................$25</p>
+                    <figure>
+                        <img src="images/stylish-cut.jpg">
+                    </figure>
+                </div>
+            </div>
+            <div class="col">
+                <h2 style="text-align: center">COLOR</h2>
+                <div class="hover-image">
+                    <p>Highlights.....................................$40</p>
+                    <figure>
+                        <img src="images/highlights.jpg">
+                    </figure>
+                </div>
+                <div class="hover-image">
+                    <p>Full Color......................................$60</p>
+                    <figure>
+                        <img src="images/color-hair.jpeg">
+                    </figure>
+                </div>
+                <div class="hover-image">
+                    <p>Bleach & Color...........................$80</p>
+                    <figure>
+                        <img src="images/blue-hair.jpg">
+                    </figure>
+                </div>
+            </div>
+            <div class="col">
+                <h2 style="text-align: center">OTHER</h2>
+                <div class="hover-image">
+                    <p>Beard...........................................$5</p>
+                    <figure>
+                        <img src="images/beard.jpg">
+                    </figure>
+                </div>
+                <div class="hover-image">
+                    <p>Eyebrows.................................$10</p>
+                    <figure>
+                        <img src="images/eyebrows.jpg">
+                    </figure>
+                </div>
+                <div class="hover-image">
+                    <p>Perm..........................................$50</p>
+                    <figure>
+                        <img src="images/perm.jpg">
+                    </figure>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-lg bg-light">
+        <div class="row">
+            <div class="col-sm-8 service-form">
+                <form>
+                    <h3 style="text-align: center">Reserve Your Appointment Now!</h3>
+                    <p>Select any service(s) :</p>
+                    Cuts :
+                    <div class="form-check-inline">
+                        <label class="form-check-label">
+                            <input type="radio" class="form-check-input" name="cut">Kid's Cut ($15)
+                        </label>
+                    </div>
+                    <div class="form-check-inline">
+                        <label class="form-check-label">
+                            <input type="radio" class="form-check-input" name="cut">Basic Cut ($20)
+                        </label>
+                    </div>
+                    <div class="form-check-inline">
+                        <label class="form-check-label">
+                            <input type="radio" class="form-check-input" name="cut">Cut & Style ($25)
+                        </label>
+                    </div>
+                    <br>
+                    Color :
+                    <div class="form-check-inline">
+                        <label class="form-check-label">
+                            <input type="radio" class="form-check-input" name="color">Highlights ($40)
+                        </label>
+                    </div>
+                    <div class="form-check-inline">
+                        <label class="form-check-label">
+                            <input type="radio" class="form-check-input" name="color">Full Color ($60)
+                        </label>
+                    </div>
+                    <div class="form-check-inline">
+                        <label class="form-check-label">
+                            <input type="radio" class="form-check-input" name="color">Bleach & Color ($80)
+                        </label>
+                    </div>
+                    <br>
+                    Other :
+                    <div class="form-check-inline">
+                        <label class="form-check-label">
+                            <input type="checkbox" class="form-check-input" value="beard">Beard ($5)
+                        </label>
+                    </div>
+                    <div class="form-check-inline">
+                        <label class="form-check-label">
+                            <input type="checkbox" class="form-check-input" value="eyebrows">Eyebrows ($10)
+                        </label>
+                    </div>
+                    <div class="form-check-inline">
+                        <label class="form-check-label">
+                            <input type="checkbox" class="form-check-input" value="perm">Perm ($50)
+                        </label>
+                    </div>
+                    <br><br>
+                    <p>Select a date and time :</p>
+                    <label>
+                        <input type="datetime-local">
+                    </label>
+                    <p>Full Name :</p>
+                    <label>
+                        <input type="text">
+                    </label>
+                    <p>Telephone # :</p>
+                    <label>
+                        <input type="tel">
+                    </label>
+                    <br>
+                    <input type="submit" class="btn-primary p-2" value="Submit Reservation" style="margin-left: 40%">
+                </form>
+            </div>
+
+            <div class="col-sm-4 bg-light bio-col">
+                <h3 style="text-align: center">Hairdresser Bio</h3>
+                <img src="images/hairdresser-bio.jpg" alt="Hairdresser photo" style="border: 2pt solid black" class="ml-4">
+                <p style="margin-top: 20pt">Amelia Green is a 27 year old hairdresser and aestetician. Native to Derry, she has spent the past
+                9 years gaining the experience required to open her own salon.</p>
+            </div>
+        </div>
+    </div>
+    <div class="container-sm py-1 bg-dark text-white" style="text-align: center">
+        <p><i>Website designed by Phillip Lamothe, 8606706</i></p>
+    </div>
+</body>
+</html>

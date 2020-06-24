@@ -1,0 +1,56 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+.logo {
+    margin-left: 5px;
+    margin-top: -5px;
+    border: 2pt solid black;
+}
+.title-card {
+    padding-left: 30pt;
+    font-family: Courgette;
+    font-style: italic;
+}
+.maps-button {
+    margin-left: 10pt;
+}
+.info-card {
+    border: 5pt solid #343a40;
+    padding: 15px 10px 0 15px;
+}
+.service-form {
+    padding-top: 8pt;
+    padding-bottom: 10pt;
+    border: 5pt solid #343a40;
+}
+.bio-col {
+    padding-top: 8pt;
+    border: 5pt solid #343a40;
+}
+.hover-image {
+    position: relative;
+    z-index: 2;
+}
+.hover-image p{
+    z-index: 1;
+}
+.hover-image figure{
+    display: none;
+    position: absolute;
+    z-index: 3;
+    margin-right: 10%;
+}
+.hover-image img {
+    display: block;
+    border: 2pt solid black;
+    max-width: 50% ;
+    max-height: 50%;
+    z-index: -1;
+}
+.hover-image:focus figure,
+.hover-image:hover figure {
+    display: block;
+    z-index: -1;
+}
