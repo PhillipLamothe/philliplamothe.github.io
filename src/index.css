@@ -1,0 +1,44 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+h1 {
+  color: yellow;
+  background-color: black;
+  text-align: center;
+  padding-top: 10pt;
+  padding-bottom: 10pt;
+}
+
+.Homepage p {
+  text-align: center;
+}
+
+.ConfirmQuizSubmit p {
+  text-align: center;
+}
+
+.BrowseButton button {
+  margin-left: 42%;
+}
+.CreateButton button {
+  margin-left: 42%;
+}
+
+.HomeButton button {
+  margin-left: 46%;
+}
